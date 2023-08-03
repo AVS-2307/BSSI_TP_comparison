@@ -9,7 +9,7 @@ warnings.simplefilter(action='ignore', category=UserWarning)
 # Retrieve current working directory (`cwd`)
 cwd = os.getcwd()
 
-# Change directory
+# Change directory. Директория, где лежат файлы
 
 os.chdir(r"C:\Users\AVShestakov\Расчет новостроек\Юг")
 
@@ -47,6 +47,7 @@ df_Task_2G.insert(loc=len(df_Task_2G.columns), column='% прироста ТЗ',
 df_Task_4G.insert(loc=len(df_Task_4G.columns), column='% прироста ТЗ', value=df_Delta_4G)
 
 # для возможности сравнения ТЗ и BSSI должны быть одинаковые названия колонок
+# (хотя и необязательно, можно left_on= и right_on= применить)
 df_BSSI = df_BSSI.rename(columns={'ID объекта из файла задания': 'Индекс для BSSi'})
 
 # BSSI делим на 2G и 4G
